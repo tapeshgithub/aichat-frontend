@@ -6,3 +6,4 @@ withCredentials: true,
 });
 
 export default api;
+
