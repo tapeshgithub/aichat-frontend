@@ -65,7 +65,7 @@ function App() {
       { role: "user", content: userText },
     ]);
 
-    const res = await api.post("/api/chat", {
+    const res = await api.post("/api/chat/response", {
       message: userText,
     });
 
