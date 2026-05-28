@@ -48,12 +48,15 @@ function App() {
     await checkUser();
   };
 
-  const logout = async () => {
+const logout = async () => {
+  try {
     await api.post("/api/auth/logout");
-    setUser(null);
-    setMessages([]);
-  };
-
+  } catch {
+    // Clear local state even if request fails
+  }
+  setUser(null);
+  setMessages([]);
+};
   const sendMessage = async () => {
     if (!input.trim()) return;
 
